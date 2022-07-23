@@ -6,6 +6,21 @@
 main.dashboard-container{
     display: flex;
     .left-container{
-        width: min(300px, 30vw);
+
+        width: max(300px, 20vw);
+        background-color: aqua;
+        padding:2rem;
+        .nav-list{
+            padding-top: 2rem;
+            .nav-item{
+                margin-top: 8px;
+                list-style-type: none;
+
+            }
+        }
+    }
+    .right-container{
+        width: max(80vw, 600px);
+        padding: 2rem 1rem;
     }
 }

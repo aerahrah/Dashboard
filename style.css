@@ -8,5 +8,18 @@ main.dashboard-container {
   display: flex;
 }
 main.dashboard-container .left-container {
-  width: min(300px, 30vw);
+  width: max(300px, 20vw);
+  background-color: aqua;
+  padding: 2rem;
+}
+main.dashboard-container .left-container .nav-list {
+  padding-top: 2rem;
+}
+main.dashboard-container .left-container .nav-list .nav-item {
+  margin-top: 8px;
+  list-style-type: none;
+}
+main.dashboard-container .right-container {
+  width: max(80vw, 600px);
+  padding: 2rem 1rem;
 }/*# sourceMappingURL=style.css.map */
