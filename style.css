@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+main.dashboard-container {
+  display: flex;
+}
+main.dashboard-container .left-container {
+  width: min(300px, 30vw);
+}/*# sourceMappingURL=style.css.map */
