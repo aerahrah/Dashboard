@@ -20,7 +20,11 @@ main.dashboard-container{
     display: flex;
     min-height: 100vh;
     .left-container{
-        width: max(300px, 20vw);
+        min-width: 300px;
+        position: fixed;
+        left: 0;
+        top: 0;
+        min-height: 100vh;
         background-color: var(--side-bar-color);
         color: var(--bg-main-color);
         font-size: 18px;
@@ -28,15 +32,15 @@ main.dashboard-container{
         .nav-list{
             padding-top: 1.75rem;
             .nav-item{
-                margin-top: 8px;
+                margin-top: 12px;
                 list-style-type: none;
             }
         }
     }
     .right-container{
+        margin-left: 300px;
         display: flex;
         flex-direction: column;
-        width: max(80vw, 600px);
         .nav-container-right{                  background-color: var(--project-tile-color);;
             border-bottom: 1px solid var(--font-main-color);
             padding: 2rem 3rem;

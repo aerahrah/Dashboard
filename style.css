@@ -23,7 +23,11 @@ main.dashboard-container {
   min-height: 100vh;
 }
 main.dashboard-container .left-container {
-  width: max(300px, 20vw);
+  min-width: 300px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  min-height: 100vh;
   background-color: var(--side-bar-color);
   color: var(--bg-main-color);
   font-size: 18px;
@@ -33,13 +37,13 @@ main.dashboard-container .left-container .nav-list {
   padding-top: 1.75rem;
 }
 main.dashboard-container .left-container .nav-list .nav-item {
-  margin-top: 8px;
+  margin-top: 12px;
   list-style-type: none;
 }
 main.dashboard-container .right-container {
+  margin-left: 300px;
   display: flex;
   flex-direction: column;
-  width: max(80vw, 600px);
 }
 main.dashboard-container .right-container .nav-container-right {
   background-color: var(--project-tile-color);
