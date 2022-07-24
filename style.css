@@ -20,6 +20,21 @@ main.dashboard-container .left-container .nav-list .nav-item {
   list-style-type: none;
 }
 main.dashboard-container .right-container {
+  display: flex;
+  flex-direction: column;
   width: max(80vw, 600px);
+}
+main.dashboard-container .right-container .nav-container-right {
+  border: 2px solid black;
   padding: 2rem 1rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
+}
+main.dashboard-container .right-container .nav-container-right .search-bar-container, main.dashboard-container .right-container .nav-container-right .nav-utility {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+main.dashboard-container .right-container .nav-container-right .icon-container-nav p {
+  display: inline;
+  margin-left: 1rem;
 }/*# sourceMappingURL=style.css.map */

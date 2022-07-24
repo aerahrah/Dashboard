@@ -6,7 +6,6 @@
 main.dashboard-container{
     display: flex;
     .left-container{
-
         width: max(300px, 20vw);
         background-color: aqua;
         padding:2rem;
@@ -20,7 +19,23 @@ main.dashboard-container{
         }
     }
     .right-container{
+        display: flex;
+        flex-direction: column;
         width: max(80vw, 600px);
-        padding: 2rem 1rem;
+       
+        .nav-container-right{
+            border: 2px solid black;
+            padding: 2rem 1rem;
+            box-shadow: 0px 2px 4px rgba(0,0,0,0.13);
+            .search-bar-container,.nav-utility{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .icon-container-nav p{
+                display: inline;
+                margin-left: 1rem;
+            }
+        }
     }
 }
