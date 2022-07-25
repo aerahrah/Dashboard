@@ -35,6 +35,7 @@ main.dashboard-container{
             align-items: center;
             padding: 0 2rem;
             padding-top: 2rem; 
+            color: var(--font-accent-color);
             h1.title{
                 font-size: 1.75rem;
             }
@@ -48,6 +49,13 @@ main.dashboard-container{
             li.nav-item{
                 padding: 12px 2rem;
                 list-style-type: none;
+                &:hover{
+                    padding: 12px calc(2rem - 4px);
+                    cursor: pointer;
+                    color: var(--font-accent-color);
+                    background-color: rgba(111,111,111,0.13);
+                    border-left: 4px solid var(--accent-color);
+                }
                 div.nav-icons{
                     display: flex;
                     align-items: center;
@@ -56,13 +64,6 @@ main.dashboard-container{
                    width: 36px;
                    font-size: 14px;
                 }
-            }
-            .nav-item:hover{
-                padding: 12px calc(2rem - 4px);
-                cursor: pointer;
-                color: var(--font-accent-color);
-                background-color: rgba(111,111,111,0.13);
-                border-left: 4px solid var(--accent-color);
             }
         }
     }
@@ -73,7 +74,7 @@ main.dashboard-container{
         .nav-container-right{                  
             background-color: var(--project-tile-color);;
             border-bottom: 1px solid rgba(0,0,0,0.13);
-            padding: 2rem 3rem;
+            padding: 1.5rem 3rem;
             box-shadow: 0px 2px 4px rgba(0,0,0,0.13);
             .search-bar-container{
                 margin-bottom: 1.5rem;
@@ -81,6 +82,7 @@ main.dashboard-container{
             .search-bar-container,.nav-utility{
                 display: flex;
                 justify-content: space-between;
+                align-items: center;
                 width: 100%;
                 .search-bar{
                     display: flex;
@@ -97,9 +99,37 @@ main.dashboard-container{
                         padding: 0 1rem;
                     }
                 }
+                .icon-container-nav{
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                    img{
+                        width: 45px;
+                        height: 45px;
+                        border-radius: 100%;
+                    }
+                    i{
+                        font-size: 1.5rem;
+                        &:hover{
+                            color: var(--accent-color);
+                            cursor: pointer;
+                        }
+                    }
+                }
+                    .user-profile-container{
+                        display: flex;
+                        align-items: center;
+                        gap: 1.75rem;
+                        img{
+                            width: 75px;
+                            height: 75px;
+                            border-radius: 100%;
+                        }
+
+                    }
+
                 .button-nav-container{
                     button{
-                    
                         color: var(--font-accent-color);
                         border: none;
                         border-radius: 25px;
@@ -109,17 +139,13 @@ main.dashboard-container{
                         margin-left: .75rem;
                         cursor: pointer;
                         box-shadow: 0px 2px 4px rgba(0,0,0,0.13);
-                    }
-                    button:active{
-                        transform: scale(.98);
-                        box-shadow: 0px 1px 2px rgba(0,0,0,0.07);
-                        background-color: #5f3dc4;
+                        &:active{
+                            transform: scale(.98);
+                            box-shadow: 0px 1px 2px rgba(0,0,0,0.07);
+                            background-color: #5f3dc4;
+                        }
                     }
                 }
-            }
-            .icon-container-nav p{
-                display: inline;
-                margin-left: 1rem;
             }
         }
         div.container{
@@ -131,9 +157,6 @@ main.dashboard-container{
                 grid-template-columns: repeat(2, 1fr);
                 grid-template-rows: 18px repeat(2, 1fr);
                 gap: 32px;
-                h3.projects-title{
-                    grid-column: 1/span 2;
-                }
                 .project-item{
                     border: 1px solid rgba(0,0,0,0.13);
                     border-left: 8px solid var(--accent-color);
@@ -142,17 +165,27 @@ main.dashboard-container{
                     background-color: var(--project-tile-color);
                     box-shadow: 0px 2px 4px rgba(0,0,0,0.13);
                     cursor: pointer;
+                    &:hover{
+                        transition: ease-in 120ms;
+                        transform: scale(1.008);
+                        box-shadow: 0px 4px 8px rgba(0,0,0,0.19);
+                    }
                     .icon-container{
                         float: right;
+                        margin-top: 2.25rem;
                         i{
-                            margin-left: .75rem;
+                            font-size: 1.125rem;
+                            margin-left: 1rem;
+                            &:hover{
+                                color: var(--accent-color);
+                            }
                         }
                     }
                 }
-                .project-item:hover{
-                    transition: ease-in 120ms;
-                    transform: scale(1.008);
-                    box-shadow: 0px 4px 8px rgba(0,0,0,0.19);
+                h3.projects-title{
+                    grid-column: 1/span 2;
+                    margin-bottom: -36px;
+                    padding-bottom: -50px;
                 }
             }
             section.sidebar{
@@ -160,6 +193,11 @@ main.dashboard-container{
                 grid-template-rows: 18px 1fr 18px 1fr;
                 gap: 32px;
                 .project-item{
+                    &:hover{
+                        transition: ease-in 120ms;
+                        transform: scale(1.008);
+                        box-shadow: 0px 4px 8px rgba(0,0,0,0.19);
+                    }
                     background-color: var(--project-tile-color);
                     border: 1px solid rgba(0,0,0,0.13);
                     border-radius: 8px;
@@ -168,11 +206,6 @@ main.dashboard-container{
                     &:first-of-type(){
                         margin-bottom: 2rem;
                     }
-                }
-                .project-item:hover{
-                    transition: ease-in 120ms;
-                    transform: scale(1.008);
-                    box-shadow: 0px 4px 8px rgba(0,0,0,0.19);
                 }
             }
         }
