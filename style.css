@@ -34,19 +34,35 @@ main.dashboard-container .left-container {
   color: var(--font-white-color);
   font-size: 18px;
 }
-main.dashboard-container .left-container h1.title {
-  font-size: 1.75rem;
+main.dashboard-container .left-container header {
+  display: flex;
+  align-items: center;
   padding: 0 2rem;
   padding-top: 2rem;
 }
-main.dashboard-container .left-container .nav-list {
+main.dashboard-container .left-container header h1.title {
+  font-size: 1.75rem;
+}
+main.dashboard-container .left-container header i {
+  width: 36px;
+  font-size: 1.5rem;
+}
+main.dashboard-container .left-container ul.nav-list {
   padding-top: 1.75rem;
 }
-main.dashboard-container .left-container .nav-list .nav-item {
+main.dashboard-container .left-container ul.nav-list li.nav-item {
   padding: 12px 2rem;
   list-style-type: none;
 }
-main.dashboard-container .left-container .nav-list .nav-item:hover {
+main.dashboard-container .left-container ul.nav-list li.nav-item div.nav-icons {
+  display: flex;
+  align-items: center;
+}
+main.dashboard-container .left-container ul.nav-list li.nav-item i {
+  width: 36px;
+  font-size: 14px;
+}
+main.dashboard-container .left-container ul.nav-list .nav-item:hover {
   padding: 12px calc(2rem - 4px);
   cursor: pointer;
   color: var(--font-accent-color);
@@ -129,6 +145,12 @@ main.dashboard-container .right-container div.container main.projects-container 
   background-color: var(--project-tile-color);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
   cursor: pointer;
+}
+main.dashboard-container .right-container div.container main.projects-container .project-item .icon-container {
+  float: right;
+}
+main.dashboard-container .right-container div.container main.projects-container .project-item .icon-container i {
+  margin-left: 0.75rem;
 }
 main.dashboard-container .right-container div.container main.projects-container .project-item:hover {
   transition: ease-in 120ms;
