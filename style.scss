@@ -21,15 +21,14 @@ body{
 }
 main.dashboard-container{
     display: flex;
-    max-height: 100vh;
-    min-width: 1060px;
     overflow-y: scroll;
     .left-container{
-        min-width: 300px;
+        display: flex;
+        min-width: clamp(200px, 30vw, 300px);
         position: fixed;
         left: 0;
         top: 0;
-        min-height: 100vh;
+        height: 1000vh;
         background-color: var(--side-bar-color);
         color: var(--font-white-color);
         font-size: 18px;
@@ -71,7 +70,7 @@ main.dashboard-container{
         }
     }
     .right-container{
-        margin-left: 300px;
+        margin-left: clamp(230px, 30vw, 300px);
         display: flex;
         flex-direction: column;
         .nav-container-right{                  
@@ -228,9 +227,6 @@ main.dashboard-container{
     main.dashboard-container{
         .right-container{
             div.container{
-                display: flex;
-                padding:2rem;
-                gap: 1rem;
                 main.projects-container{
                     display: grid;
                     grid-template-columns: 1fr;
@@ -243,3 +239,68 @@ main.dashboard-container{
         }
     }
 }
+@media (max-width:580px){
+    main.dashboard-container{
+        .left-container{
+            min-width: 30px;
+            height: 1000vh;
+            header{
+                display: flex;
+                align-items: center;
+                padding: 0 2rem;
+                padding-top: 2rem; 
+                color: var(--font-accent-color);
+                h1.title{
+                    font-size: 1.75rem;
+                    display: none;
+                }
+                i{
+                    width: unset;
+                    font-size: 1.5rem;
+                 }
+            }
+            ul.nav-list{
+                padding-top: 1.75rem;
+                li.nav-item{
+                    padding: 12px 2rem;
+                    list-style-type: none;
+                    &:hover{
+                        padding: 12px calc(2rem - 4px);
+                        cursor: pointer;
+                        color: var(--font-accent-color);
+                        background-color: rgba(111,111,111,0.13);
+                        border-left: 4px solid var(--accent-color);
+                    }
+                    div.nav-icons{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        p{
+                            display: none;
+                        }
+                    }
+                    i{
+                        width: unset;
+                       font-size: 14px;
+                    }
+                }
+            }
+        }
+        .right-container{
+            margin-left: clamp(30px, 50vw, 70px);
+            div.container{
+
+                flex-direction: column;
+                main.projects-container{
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-template-rows: 18px repeat(2, 1fr);
+                    h3.projects-title{
+                        grid-column: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
