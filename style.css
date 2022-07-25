@@ -93,7 +93,15 @@ main.dashboard-container .right-container .nav-container-right .search-bar-conta
 main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar {
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
   gap: 12px;
+}
+main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar i, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar i {
+  font-size: 1.125rem;
+}
+main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar i:hover, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar i:hover {
+  color: var(--accent-color);
+  cursor: pointer;
 }
 main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar input, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar input {
   width: clamp(300px, 40vw, 700px);
@@ -104,6 +112,9 @@ main.dashboard-container .right-container .nav-container-right .search-bar-conta
   border-radius: 12px;
   box-shadow: 0px 0px 2px rgba(111, 111, 111, 0.13);
   padding: 0 1rem;
+}
+main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar input:focus, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar input:focus {
+  border: 1px solid rgba(94, 8, 141, 0.256);
 }
 main.dashboard-container .right-container .nav-container-right .search-bar-container .icon-container-nav, main.dashboard-container .right-container .nav-container-right .nav-utility .icon-container-nav {
   display: flex;
@@ -186,8 +197,6 @@ main.dashboard-container .right-container div.container main.projects-container 
 }
 main.dashboard-container .right-container div.container main.projects-container h3.projects-title {
   grid-column: 1/span 2;
-  margin-bottom: -36px;
-  padding-bottom: -50px;
 }
 main.dashboard-container .right-container div.container section.sidebar {
   display: grid;
