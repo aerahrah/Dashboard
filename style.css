@@ -20,151 +20,153 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-main.dashboard-container {
+aside.left-container {
+  height: 1000vh;
+  min-width: clamp(200px, 30vw, 230px);
+  z-index: 3;
   display: flex;
-  overflow-y: scroll;
-}
-main.dashboard-container .left-container {
-  display: flex;
-  min-width: clamp(200px, 30vw, 300px);
   position: fixed;
   left: 0;
   top: 0;
-  height: 1000vh;
   background-color: var(--side-bar-color);
   color: var(--font-white-color);
   font-size: 18px;
 }
-main.dashboard-container .left-container header {
+aside.left-container header {
   display: flex;
   align-items: center;
+  color: var(--font-accent-color);
   padding: 0 2rem;
   padding-top: 2rem;
-  color: var(--font-accent-color);
 }
-main.dashboard-container .left-container header h1.title {
+aside.left-container header h1.title {
   font-size: 1.75rem;
 }
-main.dashboard-container .left-container header i {
+aside.left-container header i {
   width: 36px;
   font-size: 1.5rem;
 }
-main.dashboard-container .left-container ul.nav-list {
+aside.left-container ul.nav-list {
   padding-top: 1.75rem;
 }
-main.dashboard-container .left-container ul.nav-list li.nav-item {
+aside.left-container ul.nav-list li.nav-item {
   padding: 12px 2rem;
   list-style-type: none;
 }
-main.dashboard-container .left-container ul.nav-list li.nav-item:hover {
-  padding: 12px calc(2rem - 4px);
-  cursor: pointer;
-  color: var(--font-accent-color);
-  background-color: rgba(111, 111, 111, 0.13);
+aside.left-container ul.nav-list li.nav-item:hover {
   border-left: 4px solid var(--accent-color);
+  background-color: rgba(111, 111, 111, 0.13);
+  color: var(--font-accent-color);
+  cursor: pointer;
+  padding: 12px calc(2rem - 4px);
 }
-main.dashboard-container .left-container ul.nav-list li.nav-item div.nav-icons {
+aside.left-container ul.nav-list li.nav-item div.nav-icons {
   display: flex;
   align-items: center;
 }
-main.dashboard-container .left-container ul.nav-list li.nav-item i {
+aside.left-container ul.nav-list li.nav-item i {
   width: 36px;
   font-size: 14px;
 }
+
+main.dashboard-container {
+  display: flex;
+  overflow-y: scroll;
+}
 main.dashboard-container .right-container {
-  margin-left: clamp(230px, 30vw, 300px);
   display: flex;
   flex-direction: column;
+  margin-left: clamp(230px, 30vw, 230px);
 }
-main.dashboard-container .right-container .nav-container-right {
-  background-color: var(--project-tile-color);
+main.dashboard-container .right-container nav {
   border-bottom: 1px solid rgba(0, 0, 0, 0.13);
-  padding: 1.5rem 3rem;
+  background-color: var(--project-tile-color);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
+  padding: 1rem 3rem;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container {
+main.dashboard-container .right-container nav .search-bar-container {
   margin-bottom: 1.5rem;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container, main.dashboard-container .right-container .nav-container-right .nav-utility {
+main.dashboard-container .right-container nav .search-bar-container, main.dashboard-container .right-container nav .nav-utility {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar {
+main.dashboard-container .right-container nav .search-bar-container .search-bar, main.dashboard-container .right-container nav .nav-utility .search-bar {
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
   gap: 12px;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar i, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar i {
+main.dashboard-container .right-container nav .search-bar-container .search-bar i, main.dashboard-container .right-container nav .nav-utility .search-bar i {
   font-size: 1.125rem;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar i:hover, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar i:hover {
+main.dashboard-container .right-container nav .search-bar-container .search-bar i:hover, main.dashboard-container .right-container nav .nav-utility .search-bar i:hover {
   color: var(--accent-color);
   cursor: pointer;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar input, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar input {
-  width: clamp(300px, 40vw, 700px);
+main.dashboard-container .right-container nav .search-bar-container .search-bar input, main.dashboard-container .right-container nav .nav-utility .search-bar input {
   height: 28px;
-  outline: none;
+  width: clamp(300px, 40vw, 700px);
   border: 1px solid rgba(0, 0, 0, 0.13);
-  background-color: var(--bg-main-color);
   border-radius: 12px;
-  box-shadow: 0px 0px 2px rgba(111, 111, 111, 0.13);
+  background-color: var(--bg-main-color);
+  box-shadow: inset 0px 0px 8px rgba(0, 0, 0, 0.13);
+  outline: none;
   padding: 0 1rem;
   margin-right: 1rem;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .search-bar input:focus, main.dashboard-container .right-container .nav-container-right .nav-utility .search-bar input:focus {
+main.dashboard-container .right-container nav .search-bar-container .search-bar input:focus, main.dashboard-container .right-container nav .nav-utility .search-bar input:focus {
   border: 1px solid rgba(94, 8, 141, 0.256);
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .icon-container-nav, main.dashboard-container .right-container .nav-container-right .nav-utility .icon-container-nav {
+main.dashboard-container .right-container nav .search-bar-container .icon-container-nav, main.dashboard-container .right-container nav .nav-utility .icon-container-nav {
   display: flex;
   align-items: center;
   gap: 1rem;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .icon-container-nav img, main.dashboard-container .right-container .nav-container-right .nav-utility .icon-container-nav img {
+main.dashboard-container .right-container nav .search-bar-container .icon-container-nav img, main.dashboard-container .right-container nav .nav-utility .icon-container-nav img {
   width: 45px;
   height: 45px;
   border-radius: 100%;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .icon-container-nav i, main.dashboard-container .right-container .nav-container-right .nav-utility .icon-container-nav i {
+main.dashboard-container .right-container nav .search-bar-container .icon-container-nav i, main.dashboard-container .right-container nav .nav-utility .icon-container-nav i {
   font-size: 1.5rem;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .icon-container-nav i:hover, main.dashboard-container .right-container .nav-container-right .nav-utility .icon-container-nav i:hover {
+main.dashboard-container .right-container nav .search-bar-container .icon-container-nav i:hover, main.dashboard-container .right-container nav .nav-utility .icon-container-nav i:hover {
   color: var(--accent-color);
   cursor: pointer;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .user-profile-container, main.dashboard-container .right-container .nav-container-right .nav-utility .user-profile-container {
+main.dashboard-container .right-container nav .search-bar-container .user-profile-container, main.dashboard-container .right-container nav .nav-utility .user-profile-container {
   display: flex;
   align-items: center;
   gap: 1.75rem;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .user-profile-container img, main.dashboard-container .right-container .nav-container-right .nav-utility .user-profile-container img {
+main.dashboard-container .right-container nav .search-bar-container .user-profile-container img, main.dashboard-container .right-container nav .nav-utility .user-profile-container img {
   width: 75px;
   height: 75px;
   border-radius: 100%;
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .button-nav-container button, main.dashboard-container .right-container .nav-container-right .nav-utility .button-nav-container button {
-  color: var(--font-accent-color);
+main.dashboard-container .right-container nav .search-bar-container .button-nav-container button, main.dashboard-container .right-container nav .nav-utility .button-nav-container button {
+  min-width: 90px;
   border: none;
   border-radius: 25px;
   background-color: var(--accent-color);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
+  color: var(--font-accent-color);
   padding: 0.65rem 1.15rem;
-  min-width: 90px;
   margin-left: 0.75rem;
   cursor: pointer;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
 }
-main.dashboard-container .right-container .nav-container-right .search-bar-container .button-nav-container button:active, main.dashboard-container .right-container .nav-container-right .nav-utility .button-nav-container button:active {
-  transform: scale(0.98);
+main.dashboard-container .right-container nav .search-bar-container .button-nav-container button:active, main.dashboard-container .right-container nav .nav-utility .button-nav-container button:active {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
   background-color: #5f3dc4;
+  transform: scale(0.98);
 }
 main.dashboard-container .right-container div.container {
   display: flex;
-  padding: 2rem;
   gap: 1rem;
+  padding: 2rem;
 }
 main.dashboard-container .right-container div.container main.projects-container {
   display: grid;
@@ -175,16 +177,16 @@ main.dashboard-container .right-container div.container main.projects-container 
 main.dashboard-container .right-container div.container main.projects-container .project-item {
   border: 1px solid rgba(0, 0, 0, 0.13);
   border-left: 8px solid var(--accent-color);
-  padding: 1.5rem;
   border-radius: 8px;
   background-color: var(--project-tile-color);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
+  padding: 1.5rem;
   cursor: pointer;
 }
 main.dashboard-container .right-container div.container main.projects-container .project-item:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.19);
   transition: ease-in 120ms;
   transform: scale(1.008);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.19);
 }
 main.dashboard-container .right-container div.container main.projects-container .project-item .icon-container {
   float: right;
@@ -206,16 +208,16 @@ main.dashboard-container .right-container div.container section.sidebar {
   gap: 32px;
 }
 main.dashboard-container .right-container div.container section.sidebar .project-item {
-  background-color: var(--project-tile-color);
   border: 1px solid rgba(0, 0, 0, 0.13);
   border-radius: 8px;
-  padding: 1.5rem;
+  background-color: var(--project-tile-color);
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.13);
+  padding: 1.5rem;
 }
 main.dashboard-container .right-container div.container section.sidebar .project-item:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.19);
   transition: ease-in 120ms;
   transform: scale(1.008);
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.19);
 }
 main.dashboard-container .right-container div.container section.sidebar .project-item:first-of-type() {
   margin-bottom: 2rem;
@@ -223,72 +225,50 @@ main.dashboard-container .right-container div.container section.sidebar .project
 
 @media (max-width: 1080px) {
   main.dashboard-container .right-container div.container main.projects-container {
-    display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 18px repeat(2, 1fr);
   }
   main.dashboard-container .right-container div.container main.projects-container h3.projects-title {
     grid-column: 1;
   }
 }
 @media (max-width: 580px) {
-  main.dashboard-container .left-container {
+  aside.left-container {
     min-width: 30px;
     height: 1000vh;
+    justify-content: flex-start;
   }
-  main.dashboard-container .left-container header {
-    display: flex;
-    align-items: center;
-    padding: 0 2rem;
-    padding-top: 2rem;
-    color: var(--font-accent-color);
-  }
-  main.dashboard-container .left-container header h1.title {
+  aside.left-container header h1.title {
     font-size: 1.75rem;
     display: none;
   }
-  main.dashboard-container .left-container header i {
+  aside.left-container header i {
     width: unset;
     font-size: 1.5rem;
   }
-  main.dashboard-container .left-container ul.nav-list {
-    padding-top: 1.75rem;
-  }
-  main.dashboard-container .left-container ul.nav-list li.nav-item {
-    padding: 12px 2rem;
+  aside.left-container ul.nav-list li.nav-item {
+    padding: 12px 0rem;
     list-style-type: none;
   }
-  main.dashboard-container .left-container ul.nav-list li.nav-item:hover {
-    padding: 12px calc(2rem - 4px);
-    cursor: pointer;
-    color: var(--font-accent-color);
-    background-color: rgba(111, 111, 111, 0.13);
-    border-left: 4px solid var(--accent-color);
-  }
-  main.dashboard-container .left-container ul.nav-list li.nav-item div.nav-icons {
-    display: flex;
-    align-items: center;
+  aside.left-container ul.nav-list li.nav-item div.nav-icons {
     justify-content: center;
   }
-  main.dashboard-container .left-container ul.nav-list li.nav-item div.nav-icons p {
+  aside.left-container ul.nav-list li.nav-item div.nav-icons p {
     display: none;
   }
-  main.dashboard-container .left-container ul.nav-list li.nav-item i {
+  aside.left-container ul.nav-list li.nav-item i {
     width: unset;
     font-size: 14px;
   }
   main.dashboard-container .right-container {
     margin-left: clamp(30px, 50vw, 70px);
   }
+  main.dashboard-container .right-container nav {
+    padding: 1rem 2rem;
+  }
+  main.dashboard-container .right-container nav .search-bar-container .search-bar input, main.dashboard-container .right-container nav .nav-utility .search-bar input {
+    width: clamp(100px, 40vw, 400px);
+  }
   main.dashboard-container .right-container div.container {
     flex-direction: column;
-  }
-  main.dashboard-container .right-container div.container main.projects-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 18px repeat(2, 1fr);
-  }
-  main.dashboard-container .right-container div.container main.projects-container h3.projects-title {
-    grid-column: 1;
   }
 }/*# sourceMappingURL=style.css.map */
